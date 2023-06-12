@@ -1,7 +1,6 @@
 ---
 - hosts: all
   become: yes
-  gather_facts: yes
   tasks:
   - name: install webserver on ubuntu nodes
     apt: 
