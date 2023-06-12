@@ -1,0 +1,17 @@
+---
+- hosts: all
+  become: yes
+  tasks: 
+   - name: install webserver on nod
+     apt:
+       name: apache2
+       state: present
+
+   - name: install tr
+     apt:
+      name: tree
+      state: present  
+   - name: install wget
+     apt:
+      name: wget
+      state: present   
