@@ -1,0 +1,19 @@
+---
+- hosts: 172.31.23.195
+  become: yes
+  tasks:
+  - include_tasks: file.yml
+  - name: install webserver
+    apt:
+     name: apache2
+
+  - name: copy index file into node side
+    copy:
+     src: indexfile
+     dest: /var/www/html/index.html
+
+  - name: download internet files
+    get_url:
+     url: https://archive.apache.org/dist/tomcat/tomcat-10/v10.0.20/bin/apache-tomcat-10.0.20.tar.gz
+     dest: /home/ubuntu/apache-tomcat-10.0.20.tar.gz
+    force_basic_auth: yes   
