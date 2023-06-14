@@ -6,3 +6,8 @@
   - name: install webserver
     apt:
      name: apache2
+
+  - name: copy index file into node side
+    copy:
+     src: indexfile
+     dest: /var/www/html/index.html  
