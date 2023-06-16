@@ -18,3 +18,8 @@
       dest: /home/ubuntu/apache-tomcat-10.0.20.tar.gz
       force_basic_auth: yes
 
+  - name: copy dynamic file into nodes
+    template: 
+      src: index.j2
+      dest: /var/www/html/index.html    
+
